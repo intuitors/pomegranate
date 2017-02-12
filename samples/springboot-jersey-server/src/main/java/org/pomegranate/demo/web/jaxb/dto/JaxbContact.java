@@ -39,4 +39,13 @@ public class JaxbContact {
     public void setPhones(Phones phones) {
         this.phones = phones;
     }
+
+    @Override
+    public String toString() {
+        return "JaxbContact{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", phones=" + phones +
+                '}';
+    }
 }

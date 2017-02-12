@@ -56,4 +56,14 @@ public class JaxbPhone {
     public void setNumber(String number) {
         this.number = number;
     }
+
+
+    @Override
+    public String toString() {
+        return "JaxbPhone{" +
+                "id=" + id +
+                ", type=" + type +
+                ", number='" + number + '\'' +
+                '}';
+    }
 }

@@ -23,4 +23,11 @@ public class Phones {
     public void setPhoneList(List<JaxbPhone> phoneList) {
         this.jaxbPhoneList = phoneList;
     }
+
+    @Override
+    public String toString() {
+        return "Phones{" +
+                "jaxbPhoneList=" + jaxbPhoneList +
+                '}';
+    }
 }
