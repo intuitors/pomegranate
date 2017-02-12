@@ -24,4 +24,11 @@ public class Contacts {
     public void setContactList(List<JaxbContact> contactList) {
         this.contactList = contactList;
     }
+
+    @Override
+    public String toString() {
+        return "Contacts{" +
+                "contactList=" + contactList +
+                '}';
+    }
 }

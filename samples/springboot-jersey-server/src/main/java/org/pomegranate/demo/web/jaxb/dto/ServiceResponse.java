@@ -34,4 +34,12 @@ public class ServiceResponse<T> {
     public void setMessage(T message) {
         this.message = message;
     }
+
+    @Override
+    public String toString() {
+        return "ServiceResponse{" +
+                "status=" + status +
+                ", message=" + message +
+                '}';
+    }
 }
