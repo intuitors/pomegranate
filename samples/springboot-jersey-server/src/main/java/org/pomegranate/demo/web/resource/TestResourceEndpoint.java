@@ -1,6 +1,6 @@
 package org.pomegranate.demo.web.resource;
 
-import org.pomegranate.demo.web.jaxb.dto.ResponseBody;
+import org.pomegranate.demo.web.jaxb.dto.ServiceResponse;
 import org.springframework.stereotype.Component;
 
 import javax.ws.rs.GET;
@@ -25,8 +25,8 @@ public class TestResourceEndpoint {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response greetingsInJSON() {
-        ResponseBody<String> responseEntity = new ResponseBody<>();
-        responseEntity.setStatus(ResponseBody.STATUS_SUCCESS);
+        ServiceResponse<String> responseEntity = new ServiceResponse<>();
+        responseEntity.setStatus(ServiceResponse.STATUS_SUCCESS);
         responseEntity.setMessage("Greetings from Spring Boot Jersey Server!");
         return Response.ok().entity(responseEntity).build();
     }
@@ -34,8 +34,8 @@ public class TestResourceEndpoint {
     @GET
     @Produces(MediaType.APPLICATION_XML)
     public Response greetingsInXml() {
-        ResponseBody<String> responseEntity = new ResponseBody<>();
-        responseEntity.setStatus(ResponseBody.STATUS_SUCCESS);
+        ServiceResponse<String> responseEntity = new ServiceResponse<>();
+        responseEntity.setStatus(ServiceResponse.STATUS_SUCCESS);
         responseEntity.setMessage("Greetings from Spring Boot Jersey Server!");
         return Response.ok().entity(responseEntity).build();
     }

@@ -11,14 +11,13 @@
     </parent>
 
     <groupId>org.pomegranate.demo</groupId>
-    <artifactId>springboot-jersey-server</artifactId>
+    <artifactId>springboot-mvcrest-server</artifactId>
     <version>0.1</version>
 
     <dependencies>
-        <!--spring jersey-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jersey</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
         <!-- logging with logback-->
@@ -69,6 +68,5 @@
             </plugin>
         </plugins>
     </build>
-
 
 </project>
