@@ -1,0 +1,52 @@
+<!--
+  ~ ***************************************************************************
+  ~ Copyright (c) 2009 - 2016 by Silverleap Technology (pvt) ltd.
+  ~ All Rights Reserved.
+  ~
+  ~ THIS FILE CONTAINS PROPRIETARY AND CONFIDENTIAL INFORMATION
+  ~ AND REMAINS THE UNPUBLISHED PROPERTY OF SILVERLEAP TECHNOLOGY (PVT) LTD.
+  ~ Use, disclosure, or reproduction is prohibited except as permitted
+  ~ by express written license agreement with Silverleap Technology (pvt) ltd.
+  ~ ***************************************************************************
+  -->
+
+<configuration scan="true">
+
+    <property name="LOG_DIR" value="logs"/>
+    <property name="LOG_FILE_PREFIX" value="springboot-jersey-server-demo"/>
+    <property name="TIME_BASED_ROLLING_FILE_SUFFIX" value="%d{yyyy-MM-dd}.%i.gz"/>
+    <property name="FILE_LOG_PATTERN" value="%d{HH:mm:ss.SSS} [%thread] %-5level %class{36}.%M %L - %msg%n"/>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %-5level [%logger{36}:%L] %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--Daily rolling file appender -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${LOG_DIR}/${LOG_FILE_PREFIX}.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${LOG_DIR}/${LOG_FILE_PREFIX}.log-${TIME_BASED_ROLLING_FILE_SUFFIX}</FileNamePattern>
+            <!-- keep 30 days' worth of history -->
+            <MaxHistory>30</MaxHistory>
+            <!-- or whenever the file size reaches 20MB -->
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>20MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+
+        <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+            <layout class="ch.qos.logback.classic.PatternLayout">
+                <Pattern>${FILE_LOG_PATTERN}</Pattern>
+            </layout>
+        </encoder>
+    </appender>
+
+    <logger name="org.pomegranate" level="TRACE"/>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="FILE"/>
+    </root>
+</configuration>
