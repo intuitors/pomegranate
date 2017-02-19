@@ -1,6 +1,8 @@
 # Pomegranate
 
 ## Samples
+* samples/demo-rest-app - A very simple JAX-RS Jersey project, including test class driven by Jersey Test Framework and TestNg.
+* samples/demo-rest-springdi - Simple JAX-RS Jersey project with Spring Integration, including test class driven by Jersey Test Framework and TestNg.
 * samples/springboot-jersey-server - Sample project to demonstrate Jax-RS based REST service implementation using Jersey powered by Spring Boot.
  * Host - localhost
  * Port - 8090
