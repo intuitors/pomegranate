@@ -22,5 +22,5 @@
 * mvn spring-boot:run
 
 ## References
-* **references/REST-Concepts-and-Practice.pdf** - Presentation in PDF that outlines the basic concepts and usage of RESTful Web Services.
-* **references/Maven_the_reference_guide.pdf** - Maven: The Complete Reference in PDF
+* **references/rest** - Includes Presentation in PDF that outlines the basic concepts and usage of RESTful Web Services.
+* **references/maven** - Includes Maven: The Complete Reference and Glossary in PDF
